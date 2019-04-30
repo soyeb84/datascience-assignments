@@ -21,7 +21,7 @@ from functools import reduce
 
 first_array = numpy.arange(24)
 
-print(first_array)
+print("Flattened array " + str(first_array))
 
 first_10_elements = first_array[:10] 
 
@@ -29,7 +29,7 @@ print("First 10 elements " + str(first_10_elements))
 
 last_10_elements = first_array[10:]
 
-print("First 10 elements " + str(last_10_elements))
+print("last 10 elements " + str(last_10_elements))
 
 """
 Question 2:
@@ -51,4 +51,52 @@ print("\nElements of second column " + str(mult_dim_array[:6,1]))
 
 print("\nElements of third row " + str(mult_dim_array[2,:4]))
 
-print(numpy.amax(mult_dim_array,1)
+print("\nMax elements by row " + str(numpy.amax(mult_dim_array,1)))
+
+print("\nMax elements by column " + str(numpy.amax(mult_dim_array,0)))
+
+matrix_1 = numpy.array([[1,0,2],[2,3,4],[4,0,5]])
+matrix_2 = numpy.array([[1,0,4],[5,6,4],[5,7,4]])
+
+print("\nCommon element between first row of matrices " +
+      str(numpy.intersect1d(matrix_1[0,0:],matrix_2[0,0:])))
+print("\nCommon element between second row of matrices " +
+      str(numpy.intersect1d(matrix_1[1,0:],matrix_2[1,0:])))
+print("\nCommon element between third row of matrices " + 
+      str(numpy.intersect1d(matrix_1[2,0:],matrix_2[2,0:])))
+
+"""
+Question 3:
+
+Create 2 5X4 arrays with random elements
+
+"""
+
+matrix_rand_elements_1 = numpy.random.randint(0,10,size=(5,4))
+matrix_rand_elements_2 = numpy.random.randint(0,10,size=(5,4))
+
+print("\nFirst matrix with random elements \n" + str(matrix_rand_elements_1))
+print("\nSecond matrix with random elements \n" + str(matrix_rand_elements_2))
+
+
+"""
+Question 4
+    - Perform addition on matrices created in Q3
+    - Perform subtraction on matrices created in Q3
+"""
+
+matrix_after_addition = matrix_rand_elements_1 + matrix_rand_elements_2
+matrix_after_subtraction = matrix_rand_elements_1 - matrix_rand_elements_2
+
+print("\nMatrix after addition \n" + str(matrix_after_addition))
+print("\nMatrix after subtraction \n" + str(matrix_after_subtraction))
+
+"""
+     Question 5
+      - Element wise multiplication of first matrix
+"""
+
+matrix_scalar_product = numpy.multiply(5,matrix_rand_elements_1)
+
+print("\nFirst random elements matrix multiplied by 5 for each elements\n" + 
+      str(matrix_scalar_product))
