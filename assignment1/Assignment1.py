@@ -100,3 +100,32 @@ matrix_scalar_product = numpy.multiply(5,matrix_rand_elements_1)
 
 print("\nFirst random elements matrix multiplied by 5 for each elements\n" + 
       str(matrix_scalar_product))
+
+"""
+Question 6 
+  - Perform matrix multiplication on matrices created in Question 3.
+    - Operation required to make this possible :
+      - To make this possible both the matrices should be conformable if 
+        number of columns of first Matrix is equal to number of Rows of 
+        second matrix.
+        The operation that flips rows into columns and vice versa is Transpose.
+        so we will create a transpose of second matrix.
+        
+"""
+
+matrix_rand_elements_transposed = numpy.matrix.transpose(matrix_rand_elements_2)
+
+print("\n LHS of multiplication \n" + str(matrix_rand_elements_1))
+print("\n RHS of multiplication \n" + str(matrix_rand_elements_transposed))
+
+matrix_multiplication_results = matrix_rand_elements_1.dot(matrix_rand_elements_transposed)
+
+print("Matrix multiplication results \n" + str(matrix_multiplication_results))
+
+"""
+Question 7 - Combine two matrices created in Question 3.
+"""
+
+concatenated_matrix = numpy.concatenate([matrix_rand_elements_1,matrix_rand_elements_2])
+
+print("\nConcantenated matrix \n" + str(concatenated_matrix))
