@@ -129,3 +129,13 @@ Question 7 - Combine two matrices created in Question 3.
 concatenated_matrix = numpy.concatenate([matrix_rand_elements_1,matrix_rand_elements_2])
 
 print("\nConcantenated matrix \n" + str(concatenated_matrix))
+
+
+numpy.savetxt('matrix_1.out',matrix_rand_elements_1)
+numpy.savetxt('matrix_2.out',matrix_rand_elements_2)
+
+matrix_1_from_file = numpy.loadtxt('matrix_1.out')
+matrix_2_from_file = numpy.loadtxt('matrix_2.out')
+
+print("\nmatrix 1 from file \n" + str(matrix_1_from_file))
+print("\nmatrix 2 from file \n" + str(matrix_2_from_file))
